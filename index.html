@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MounUp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>MounUp</h1>
+  <div id="userWelcome"></div>
+</header>
+<nav>
+  <ul>
+    <li><a onclick="showSection('beranda')">Beranda</a></li>
+    <li><a onclick="showSection('produk')">Produk</a></li>
+    <li><a onclick="showSection('keranjang')">Keranjang</a></li>
+    <li><a onclick="showSection('riwayat')">Riwayat</a></li>
+    <li><a onclick="showSection('kontak')">Kontak</a></li>
+  </ul>
+</nav>
+<main>
+  <section id="beranda" class="active" style="text-align: center;">
+    <h2>Selamat Datang</h2>
+    <p>Belanja perlengkapan outdoor terbaik di sini!</p>
+    <button onclick="toggleTentangKami()">Tentang Kami</button>
+    <div id="tentangKamiBox">
+      <h3>Tentang MounUp</h3>
+      <p>MounUp adalah toko online yang menyediakan perlengkapan outdoor seperti tenda, sepatu gunung, tas carrier, dan lainnya.</p>
+    </div>
+  </section>
+
+  <section id="produk">
+    <h2>Produk Kami</h2>
+    <div class="produk-list" id="produkList"></div>
+  </section>
+
+  <section id="keranjang">
+    <h2>Keranjang Belanja</h2>
+    <div id="keranjangList"></div>
+    <h3 id="totalHarga"></h3>
+    <div class="form-group"><label>Nama Penerima</label><input type="text" id="namaPenerima"></div>
+    <div class="form-group"><label>Alamat</label><input type="text" id="alamatPengiriman"></div>
+    <div class="form-group"><label>Metode Pembayaran</label>
+      <select id="metodePembayaran">
+        <option value="">-- Pilih --</option>
+        <option>Transfer BRI</option>
+        <option>Transfer BCA</option>
+        <option>OVO</option>
+        <option>DANA</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Ekspedisi</label>
+      <select id="ekspedisiPengiriman">
+        <option value="">-- Pilih --</option>
+        <option>JNE</option>
+        <option>J&T</option>
+        <option>SiCepat</option>
+      </select>
+    </div>
+    <button onclick="checkoutKeranjang()">Bayar Sekarang</button>
+  </section>
+
+  <section id="riwayat">
+    <h2>Riwayat Transaksi</h2>
+    <div id="riwayatList"></div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Email: mounupoutdoor@gmail.com</p>
+    <p>Instagram: mounUpoutdoor_</p>
+    <p>No Tlp: 0852-3333-4444</p>
+  </section>
+
+  <section id="checkoutLangsung">
+    <h2>Checkout Langsung</h2>
+    <div id="checkoutDetailLangsung"></div>
+    <div class="form-group"><label>Nama Penerima</label><input type="text" id="checkoutNama"></div>
+    <div class="form-group"><label>Alamat</label><input type="text" id="checkoutAlamat"></div>
+    <div class="form-group"><label>Metode Pembayaran</label>
+      <select id="checkoutMetode">
+        <option value="">-- Pilih --</option>
+        <option>Transfer BRI</option>
+        <option>Transfer BCA</option>
+        <option>OVO</option>
+        <option>DANA</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Ekspedisi</label>
+      <select id="checkoutEkspedisi">
+        <option value="">-- Pilih --</option>
+        <option>JNE</option>
+        <option>J&T</option>
+        <option>SiCepat</option>
+      </select>
+    </div>
+    <button onclick="konfirmasiCheckoutLangsung()">Konfirmasi & Bayar</button>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2025 MounUp</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
